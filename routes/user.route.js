@@ -9,6 +9,7 @@ import {
 import { verifyToken } from "../middlewares/verifyUser.js";
 import authMiddleware from "../middlewares/auth.middleware.js";
 import validateObjectId from "../middlewares/validate.objectId.middleware.js";
+import { sendforgotPassword } from "../controllers/auth.controller.js";
 
 const router = express.Router();
 

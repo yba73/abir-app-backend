@@ -32,3 +32,21 @@ export const validateUpdateUser = (updateUser) => {
   });
   return schema.validate(updateUser);
 };
+
+// validate email
+export const valdiateEmail = (obj) => {
+  const schema = Joi.object({
+    email: Joi.string().trim().min(2).max(100).email().required(),
+  });
+  return schema.validate(obj);
+};
+// valdiate  password
+export const valdiateResetPassword = (obj) => {
+  const schema = Joi.object({
+    password: Joi.string().trim().min(6).max(100).required(),
+    confirm_password: Joi.string().valid(Joi.ref("password")).required(),
+  });
+  return schema.validate(obj);
+};
+
+//valdiatePassword
